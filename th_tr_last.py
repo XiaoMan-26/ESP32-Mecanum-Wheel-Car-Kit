@@ -146,17 +146,17 @@ def main_loop(_):
 
         # 先判斜向（菱形）
         if abs(dx) + abs(dy) > diag_thr:
-        if dx > 0 and dy > 0:   move_num = 6   # 左下
-        if dx < 0 and dy > 0:   move_num = 7   # 右下
-        if dx > 0 and dy < 0:   move_num = 4   # 左上
-        if dx < 0 and dy < 0:   move_num = 5   # 右上
+            if dx > 0 and dy > 0:   move_num = 6   # 左下
+            if dx < 0 and dy > 0:   move_num = 7   # 右下
+            if dx > 0 and dy < 0:   move_num = 4   # 左上
+            if dx < 0 and dy < 0:   move_num = 5   # 右上
         # 再判直线（单轴）
         elif abs(dx) > straight_thr:
-        move_num = 2 if dx > 0 else 3          # 左/右
+            move_num = 2 if dx > 0 else 3          # 左/右
         elif abs(dy) > straight_thr:
-        move_num = 0 if dy < 0 else 1          # 上/下
+            move_num = 0 if dy < 0 else 1          # 上/下
         else:
-        move_num = 8                             # 停止
+            move_num = 8                             # 停止
 
         data = bytearray([1, move_num])   # 协议：首字节=1 表示离散包
         try:
@@ -170,3 +170,4 @@ print("发送端启动完成")       # 提示校准结束
 
 # 硬件定时器 30 ms 周期调用 main_loop，永不阻塞
 Timer(-1).init(period=30, mode=Timer.PERIODIC, callback=main_loop)
+
