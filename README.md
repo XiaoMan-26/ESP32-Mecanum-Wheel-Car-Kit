@@ -7,4 +7,7 @@ aranre.ino文件为c++版本的接收端程序文件
 arantr.ino文件为c++版本的发送端程序文件  
 threlast.py文件为python版本的接收端程序文件  
 thtrlast.py文件为python版本的发送端程序文件  
+  
+video link：  
+https://www.bilibili.com/video/BV1iqBMBCEsD/?share_source=copy_web&vd_source=c7c3c65160b19cbb3c152c7e826450de  
 
